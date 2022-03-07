@@ -23,7 +23,7 @@ const clientesSchema = new Schema({
     },
     telefono:{
         type:String,
-        trim
+        trim:true
     }
 });
 
