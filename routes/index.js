@@ -13,11 +13,15 @@ module.exports = function(){
     router.put('/clientes/:id',clienteController.actualizarCliente);
     router.delete('/clientes/:id',clienteController.eliminarCliente);
     /*---------Productos---------*/
-    router.post('/productos',productoController.nuevoProducto);
-    //router.get('/clientes',clienteController.mostrarClientes);
-    //router.get('/clientes/:id',clienteController.mostrarCliente);
-    //router.put('/clientes/:id',clienteController.actualizarCliente);
-    //router.delete('/clientes/:id',clienteController.eliminarCliente);
+    router.post('/productos',
+        productoController.subirArchivo,
+        productoController.nuevoProducto);
+    router.get('/productos',productoController.mostrarProductos);
+    router.get('/productos/:id',productoController.mostrarProducto);
+    router.put('/productos/:id',
+    productoController.subirArchivo,
+    productoController.actualizarProducto);
+    router.delete('/productos/:id',productoController.eliminarProducto);
 
 
     return router;
